@@ -1,3 +1,9 @@
 cat slides.md slides-clase*md > all.md
+rm -fr all
+git clone git@github.com:chrodriguez/teoria-c.git --branch gh-pages --single-branch ./all
+rm -fr all/*
 bundle exec reveal-ck generate -f all.md
+cd all && git add -A
+git commit -m "publish pages" && git push
+cd ..
 

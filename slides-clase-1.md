@@ -102,5 +102,38 @@ conversiones de tipos
 | `void`    | idem `char`. Empleado para tipos genéricos |-|-|
 
 ---
-## Constantes literales
+## Constantes literales: Punto Flotante
 
+La expresión:
+
+```c
+3.45 – 1.2e+34
+```
+
+Significa **3.45 - (1.2*10<sup>34</sup>)**
+
+
+---
+## Constantes literales: Enteros
+
+| Base | Representación|
+|:---         |---: |
+| Decimal     |  14 |
+| Hexadecimal | 0xE |
+| Octal       | 016 |
+
+---
+## Constantes literales: Enteros
+
+### Calificadores o modificadores
+
+Se aplican para determinar si el entero es con signo, corto o largo:
+
+| Literal | Representación  | Significado             |
+| ---     | :---:           |:---:                    |
+|`23L`    | decimal         |`23 long int`           |
+|`23LU`   | decimal         |`23 unsigned long int`  |
+|`023LU`  | octal           |`19 unsigned long int`  |
+|`0XFUL`  | hexadecimal     |`15 unsigned long int`  |
+---
+## Constantes literales: Char
