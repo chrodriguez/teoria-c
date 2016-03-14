@@ -1,0 +1,3 @@
+cat slides.md slides-clase*md > all.md
+bundle exec reveal-ck generate -f all.md
+
