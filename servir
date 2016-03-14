@@ -1,0 +1,18 @@
+#!/bin/bash
+
+CLASS=$1
+if [ -z "$CLASS" ]; then
+  echo Debe indicar qué clase visualizar
+  exit 1
+fi
+
+FILE_CLASS=slides-${CLASS}.md
+
+if [ ! -f "$FILE_CLASS" ]; then
+  echo El archivo $FILE_CLASS no existe
+  exit 1
+fi
+
+bundle exec reveal-ck generate -f $FILE_CLASS -d slides
+bundle exec reveal-ck serve -f $FILE_CLASS -d slides
+

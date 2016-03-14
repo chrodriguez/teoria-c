@@ -49,7 +49,7 @@ compiladores, nuevos lenguajes, etc.
 * No provee primitivas de entrada salida
 * No realiza comprobación de errores en tiempo de ejecución
 ---
-## Hola mundo
+## Hola mundo!
 
 Asumiendo el archivo se llama `hola_mundo.c`
 
@@ -127,7 +127,7 @@ Significa **3.45 - (1.2*10<sup>34</sup>)**
 
 ### Calificadores o modificadores
 
-Se aplican para determinar si el entero es con signo, corto o largo:
+Determinan si el entero es con signo, corto o largo:
 
 | Literal | Representación  | Significado             |
 | ---     | :---:           |:---:                    |
@@ -137,3 +137,5 @@ Se aplican para determinar si el entero es con signo, corto o largo:
 |`0XFUL`  | hexadecimal     |`15 unsigned long int`  |
 ---
 ## Constantes literales: Char
+
+TODO

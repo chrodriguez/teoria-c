@@ -12,9 +12,10 @@ cuyo manjeo se simplifica aún más con [reveal-ck](http://jedcn.github.io/revea
 El repositorio contiene un archivo de slide en formato 
 [Markdown](https://daringfireball.net/projects/markdown/) para cada teoría:
 
-* `slides.md`: presentación de la materia
-* `slides-clase-1.md`: clase 1
-* `slides-clase-2.md`: clase 2
+* `slides-00.md`: presentación de la materia
+* `slides-01.md`: clase 1
+* `slides-02.md`: clase 2
+* ...
 
 ## Instalando el ambiente de edición
 
@@ -35,14 +36,7 @@ Para poder editar y manipular este material se requiere:
 Para focalizar en una teoría, se utiliza el siguiente comando:
 
 ```bash
-bundle exec reveal-ck generate slides.md
-```
-
-O en el caso de una teoría diferente de la presentación de la materia, por
-ejemplo para la clase 1:
-
-```bash
-bundle exec reveal-ck generate -f slides-clase-1.md
+bundle exec reveal-ck generate -f slides-xx.md -d slides
 ```
 
 ### Para visualizar las presentaciones
@@ -50,16 +44,24 @@ bundle exec reveal-ck generate -f slides-clase-1.md
 Directamente correr:
 
 ```bash
-bundle exec reveal-ck serve
+bundle exec reveal-ck serve -f slides-xx.md -d slides
 ```
 
-O en el caso de una teoría diferente a la presentación de la materia, por
-ejemplo para la clase 1:
+### Comando simple para visualizar
+
+Correr directamente:
 
 ```bash
-bundle exec reveal-ck serve -f slides-clase-1.md
+#./servir <NUMERO DE CLASE>
+# por ejemplo:
+./servir 01
 ```
+Esto correrá los comandos anteriores
 
 ## Publicando el material en Github Pages
 
-TODO
+Simplemente correr:
+
+```bash
+./publicar
+```
