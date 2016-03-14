@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+<title>Slides</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="generator" content="reveal-ck 3.3.0">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<link rel="stylesheet" href="css/reveal-ck.css">
+
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+
+  </head>
+
+  <body>
+    <div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+
+<h2>Seminario de Lenguajes</h2>
+
+<h3>Opción C</h3>
+
+</section>
+<section>
+<section>
+
+<h1>La cátedra</h1>
+
+</section>
+<section>
+
+<h2>Profesores</h2>
+
+<ul>
+<li>Ana Paola Amadeo
+
+<ul>
+<li><a href="mailto:pamadeo@info.unlp.edu.ar">pamadeo@info.unlp.edu.ar</a></li>
+</ul>
+</li>
+<li>Christian A. Rodriguez
+
+<ul>
+<li><a href="mailto:car@info.unlp.edu.ar">car@info.unlp.edu.ar</a></li>
+<li><a href="https://twitter.com/car_unlp">@car_unlp</a></li>
+<li><a href="https://github.com/chrodriguez">https://github.com/chrodriguez</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Jefes de Trabajos Prácticos</h2>
+
+<ul>
+<li>Andrés Barbieri</li>
+<li>Fernando López</li>
+<li>Nahuel Cuesta Luengo</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ayudantes</h2>
+
+<ul>
+<li>Federico Tello Gentile</li>
+<li>Joaquín Bogado</li>
+<li>Valeria Soria</li>
+<li>Carina Girón</li>
+<li>Adán Mauri Ungaro</li>
+<li>Luciano Lorenti</li>
+<li>Agustin Larghi</li>
+<li>Jose Maria Jauregui</li>
+</ul>
+
+</section>
+</section>
+<section>
+
+<h1>Contacto</h1>
+
+<ul>
+<li><a href="https://catedras.info.unlp.edu.ar">https://catedras.info.unlp.edu.ar</a></li>
+<li><a href="mailto:lenguajec@info.unlp.edu.ar">lenguajec@info.unlp.edu.ar</a></li>
+</ul>
+
+</section>
+<section>
+<section>
+
+<h1>Horarios</h1>
+
+</section>
+<section>
+
+<h2>Horarios de Teoría</h2>
+
+<ul>
+<li>
+<strong>Turno Tarde</strong>
+
+<ul>
+<li>Lunes de 15:30hs a 17:30 Aula 1-1</li>
+</ul>
+</li>
+<li>
+<strong>Turno Mañana</strong>
+
+<ul>
+<li>Martes de 9:30hs a 11:30hs Aula 1-1</li>
+</ul>
+</li>
+</ul>
+
+<p class="fragment">
+<em>  Los alumnos optarán el turno al que asistirán según su disponibilidad horaria </em>
+</p>
+
+</section>
+<section>
+
+<h2>Horarios de Práctica</h2>
+
+<ul>
+<li>Martes de 8:00hs a 9:30hs Aula 1-1</li>
+<li>Miércoles 13:30 a 15:00 Sala de PC</li>
+<li>Viernes de 11:30hs a 13:30hs Aula 1-1</li>
+</ul>
+
+</section>
+</section>
+<section>
+
+<h2>Bilbiografía</h2>
+
+<ul>
+<li>El Lenguaje C. Kernighan &amp; Ritchie</li>
+<li>C con ejemplos. Perry, Greg</li>
+<li>Efficient C programming. Weiss, Mark Allen</li>
+<li>C in a nutshell. Prinz, Peter
+<p class="fragment">
+<a href="http://catalogo.info.unlp.edu.ar">http://catalogo.info.unlp.edu.ar</a>
+</p>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Modo de aprobación</h2>
+
+<p class="fragment" style="text-align: left;">
+La <strong>aprobación de la cursada</strong> estará dada por la aprobación de cuatro evaluaciones
+en máquina presenciales:
+</p>
+
+<ul>
+<li class="fragment">Si se aprueban las cuatro evaluaciones no se rinde parcial integrador</li>
+<li class="fragment">Cada evaluación desaprobada se rendirá como un tema en el parcial
+integrador</li>
+<li class="fragment">Puede no aprobarse ninguna evaluación, siendo necesario rendir el parcial
+integrador completo</li>
+<li class="fragment">TP integrador individual defendible en un coloquio</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Aprobación de la materia</h2>
+
+<ul>
+<li>La <strong>aprobación de la materia</strong> estará dada por la aprobación de la Cursada</li>
+<li>Con ella se obtiene un <strong>6 (seis)</strong>
+</li>
+</ul>
+
+<p><em>Si se desea mejorar la nota se podrá realizar una extensión del trabajo 
+realizado en la cursada. La nota final se promediará con
+el desempeño durante la cursada</em></p>
+
+</section>
+<section>
+
+<h1>Clase 1</h1>
+
+</section>
+<section>
+
+<h2>Temario</h2>
+
+<ul>
+<li>Historia de C</li>
+<li>Características generales</li>
+<li>Compilación de un programa</li>
+<li>Tipos de datos</li>
+<li>Operadores</li>
+<li>Estructura de un programa</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Historia de C</h2>
+
+<ul>
+<li>Desarrollador entre 1969/1973 por Dennis Ritchie </li>
+<li>A fines de 1974 fue utilizado para reimplementar el sistema operativo Unix </li>
+<li>En 1980 ANSI comenzó la estandarización del lenguaje</li>
+<li>A partir de 1990, ISO adopta ANSI C en el estandar conocido como C89/C90</li>
+<li>A fines de los '90s, se revisa el estándar y surge C99 que incorpora nuevas
+características que fueron revolucionarias</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Quiénes lo utilizan</h2>
+
+<ul>
+<li>Nuevos lenguajes mantienen expresiones similares en su sintaxis, como
+por ejemplo: C++, PERL, Javascript, Java, PHP, entre otros.</li>
+<li>En el desarrollo de sistemas operativos, bases de datos, juegos,
+compiladores, nuevos lenguajes, etc.</li>
+</ul>
+
+<p class="fragment">
+<em>Además, programar en C, motiva la adopción de buenas prácticas de programación</em>
+</p>
+
+</section>
+<section>
+
+<h2>Características</h2>
+
+<ul>
+<li>Combina elementos de alto nivel con características de bajo nivel</li>
+<li>Es un lenguaje pequeño, con una sintaxis simple</li>
+<li>Es orientado a expresiones</li>
+<li>Es base de lenguajes modernos</li>
+<li>Código <em>"portable"</em>
+</li>
+<li>Extensible mediante el uso de librerías</li>
+<li>Contempla sólo tipos de datos básicos</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Características</h2>
+
+<ul>
+<li>No es orientado a objetos</li>
+<li>No es un lenguaje de bajo nivel</li>
+<li>No provee primitivas de entrada salida</li>
+<li>No realiza comprobación de errores en tiempo de ejecución</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Hola mundo</h2>
+
+<p>Asumiendo el archivo se llama <code>hola_mundo.c</code></p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main() 
+{
+    printf("Hola Mundo\n");
+    return (0);
+}
+</code></pre>
+<pre><code class="bash">$ gcc hola_mundo.c -o hola_mundo -Wall
+</code></pre>
+</section>
+<section>
+
+<h2>Fases en la creación de un programa</h2>
+
+<p><img src="images/01%20-%20Fases%20de%20compilacion.svg" alt="Fases de compilación"></p>
+
+</section>
+<section>
+
+<h2>Tipos de datos</h2>
+
+<ul>
+<li>Definen la representación interna de una variable y un conjunto de valores
+posibles.</li>
+<li>La definición original de C era sumamente permisiva respecto de las
+conversiones de tipos
+
+<ul>
+<li>Actualmente se requiere una adecuada declaración y conversión explícita</li>
+</ul>
+</li>
+<li>Tipos de datos en C:
+
+<ul>
+<li>
+<strong>Básicos:</strong> caracteres, enteros y números de punto flotante, punteros. </li>
+<li>
+<strong>Derivados:</strong> arreglos, estructuras y uniones. </li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Tipos de datos básicos</h2>
+
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th style="text-align: left">Descripción</th>
+<th style="text-align: right">32bits</th>
+<th style="text-align: right">64bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>char</code></td>
+<td style="text-align: left">caracter</td>
+<td style="text-align: right">8</td>
+<td style="text-align: right">8</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td style="text-align: left">entero corto con signo</td>
+<td style="text-align: right">16</td>
+<td style="text-align: right">16</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td style="text-align: left">entero con signo</td>
+<td style="text-align: right">32</td>
+<td style="text-align: right">32</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td style="text-align: left">entero largo con signo</td>
+<td style="text-align: right">32</td>
+<td style="text-align: right">64</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section>
+
+<h2>Tipos de datos básicos</h2>
+
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th style="text-align: left">Descripción</th>
+<th style="text-align: right">32bits</th>
+<th style="text-align: right">64bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td style="text-align: left">flotante simple</td>
+<td style="text-align: right">32</td>
+<td style="text-align: right">32</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td style="text-align: left">flotante doble</td>
+<td style="text-align: right">64</td>
+<td style="text-align: right">64</td>
+</tr>
+<tr>
+<td><code>pointer</code></td>
+<td style="text-align: left">puntero a una posición de memoria</td>
+<td style="text-align: right">32</td>
+<td style="text-align: right">64</td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td style="text-align: left">idem <code>char</code>. Empleado para tipos genéricos</td>
+<td style="text-align: right">-</td>
+<td style="text-align: right">-</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section>
+
+<h2>Constantes literales</h2>
+
+</section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'default',
+
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
