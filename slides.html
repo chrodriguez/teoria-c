@@ -117,7 +117,7 @@
 </section>
 <section>
 
-<h2>Bilbiografía</h2>
+<h2>Bibliografía</h2>
 
 <ul>
 <li>El Lenguaje C. Kernighan &amp; Ritchie</li>
@@ -179,20 +179,27 @@ el desempeño durante la cursada</em></p>
 <li>Características generales</li>
 <li>Compilación de un programa</li>
 <li>Tipos de datos</li>
+<li>Variables</li>
 <li>Operadores</li>
 <li>Estructura de un programa</li>
 </ul>
 
 </section>
 <section>
+<section>
 
-<h2>Historia de C</h2>
+<h1>Historia de C</h1>
+
+</section>
+<section>
+
+<h2>Un poco de historia</h2>
 
 <ul>
 <li>Desarrollador entre 1969/1973 por Dennis Ritchie </li>
 <li>A fines de 1974 fue utilizado para reimplementar el sistema operativo Unix </li>
 <li>En 1980 ANSI comenzó la estandarización del lenguaje</li>
-<li>A partir de 1990, ISO adopta ANSI C en el estandar conocido como C89/C90</li>
+<li>A partir de 1990, ISO adopta ANSI C en el estándar conocido como C89/C90</li>
 <li>A fines de los '90s, se revisa el estándar y surge C99 que incorpora nuevas
 características que fueron revolucionarias</li>
 </ul>
@@ -242,9 +249,17 @@ compiladores, nuevos lenguajes, etc.</li>
 </ul>
 
 </section>
+</section>
+
+<section>
 <section>
 
-<h2>Hola mundo</h2>
+<h1>Proceso de compilación</h1>
+
+</section>
+<section>
+
+<h2>Hola mundo!</h2>
 
 <p>Asumiendo el archivo se llama <code>hola_mundo.c</code></p>
 <pre><code class="c">#include &lt;stdio.h&gt;
@@ -257,12 +272,24 @@ int main()
 </code></pre>
 <pre><code class="bash">$ gcc hola_mundo.c -o hola_mundo -Wall
 </code></pre>
+<p><small>
+<a href="images/ejemplos/01/01-hello-world.c">Descargar ejemplo</a>
+</small></p>
+
 </section>
 <section>
 
 <h2>Fases en la creación de un programa</h2>
 
 <p><img src="images/01%20-%20Fases%20de%20compilacion.svg" alt="Fases de compilación"></p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Tipos de datos</h1>
 
 </section>
 <section>
@@ -453,11 +480,469 @@ conversiones de tipos
 </tbody>
 </table>
 
+<p><small>
+<a href="images/ejemplos/01/02-0xful.c">Descargar ejemplo</a>
+</small></p>
+
 </section>
 <section>
 
 <h2>Constantes literales: Char</h2>
 
-<p>TODO</p>
+<ul>
+<li>Permiten representar letras mayúsculas, minúsculas, números de 0 a 9, signos de
+puntuación, no imprimibles, etc.</li>
+<li>Se manejan como <code>char</code> o <code>int</code> (valor <a href="http://ascii.cl/es">ASCII</a>) de forma indistinta</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Constantes literales: Char</h2>
+
+<h3>Las comillas</h3>
+
+<ul>
+<li>
+<strong>Comilla simple:</strong> usada para un char</li>
+<li>
+<strong>Comilla doble:</strong> usada para un string</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Constantes literales: Char</h2>
+
+<h3>Ejemplos</h3>
+
+<table>
+<thead>
+<tr>
+<th><code>char</code></th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'A'</code></td>
+<td>Letra A mayúscula</td>
+</tr>
+<tr>
+<td><code>'\n'</code></td>
+<td>Salto de linea. Equivale a <code>'\x0A'</code>
+</td>
+</tr>
+<tr>
+<td><code>'\0'</code></td>
+<td>Fin de string o <code>NULL</code> o cero</td>
+</tr>
+<tr>
+<td><code>'\x0A'</code></td>
+<td>Idem <code>'\n'</code> en hexadecimal</td>
+</tr>
+<tr>
+<td><code>'\012'</code></td>
+<td>Idem <code>'\n'</code> en octal</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section>
+
+<h2>Constantes literales: Char</h2>
+
+<h3>Los strings</h3>
+
+<ul>
+<li>Los strings se representan con <strong>comillas dobles</strong>.</li>
+<li>Por ello, <strong><code>'A'</code> no es lo mismo que `"A"</strong>
+</li>
+<li>El string "A" es un arreglo con los siguientes elementos: <code>['A','\0']</code>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Constantes enumerativas: Enum</h2>
+
+<p>Se utilizan para enumerar una lista de valores constantes</p>
+<pre><code class="c">enum estado_civil {casado, soltero, viudo, separado, divorciado, NSNC,
+estado_civil_TOPE };
+
+enum meses { ENE=1, FEB, MAR, ABR, MAY, JUN, JUL, AGO, SEP, OCT, NOV, DIC,
+meses_TOPE };
+
+</code></pre>
+<p><small>
+<a href="images/ejemplos/01/03-enum-sample.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Punteros</h2>
+
+<ul>
+<li>Representan una variable que apunta a otra</li>
+<li>Contienen la dirección de memoria de otra variable</li>
+<li>Un puntero consta de dos partes:
+
+<ul>
+<li>La dirección apuntada</li>
+<li>El contenido apuntado.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h3>Conceptos del manejo de memoria</h3>
+
+<ul>
+<li>Cada posición de memoria:
+
+<ul>
+<li>Almacena un byte</li>
+<li>Es accesible mediante una dirección específica</li>
+</ul>
+</li>
+<li>Las direcciones de memoria son consecutivas</li>
+<li>Dependiendo del tipo de memoria al que apunte un puntero, la
+memoria se accederá a todos los bytes que representen ese tipo.</li>
+<li>Los programas comparten el espacio de direcciones con el sistema operativo</li>
+<li>Los datos del programa y el programa se almacenan en memoria al ser ejecutados</li>
+</ul>
+
+</section>
+<section>
+
+<h3>Distribución de la memoria</h3>
+
+<ul>
+<li>La memoria de un programa en ejecución se organiza en segmentos
+
+<ul>
+<li>
+<strong>Text segment:</strong> código compilado  del programa</li>
+<li>
+<strong>Stack segment:</strong> almacena <em>variables automáticas</em> declaradas en funciones</li>
+<li>
+<strong>Heap segment:</strong> almacena <em>datos dinámicos</em>
+</li>
+</ul>
+</li>
+</ul>
+
+<p><img src="images/02-memory-segments.svg" alt="Fases de compilación"></p>
+
+</section>
+<section>
+
+<h3>Distribución de la memoria</h3>
+<pre><code class="c">int x;        /* Variable global */
+
+int main() {
+
+  int y;      /* Variable automatica */
+
+  char *str;  /* Variable automatica cuyo valor es la posición
+               * de memoria de otra variable
+               */
+
+  str = malloc(50); /* Es en esta instancia donde se aloca memoria
+                     * en la heap 
+                     */
+  ...
+}
+</code></pre>
+</section>
+<section>
+
+<h2>Esquema de memoria</h2>
+<pre><code class="c">int main( ) {
+
+  int v_entero;
+  int *p;
+  v_entero = 7;
+  p = &amp;v_entero;
+  ...
+</code></pre>
+</section>
+<section>
+
+<h2>Esquema de memoria: gráfico</h2>
+
+<table>
+<tr>
+<td class="fragment">
+<img src="images/03-memory-alignement-00.svg">
+</td>
+<td class="fragment">
+<img src="images/03-memory-alignement-01.svg">
+</td>
+<td class="fragment">
+<img src="images/03-memory-alignement-02.svg">
+</td>
+</tr>
+</table>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Variables</h1>
+
+</section>
+<section>
+
+<h2>Variables</h2>
+
+<ul>
+<li>Representa una posición de memoria que se le asigna un nombre y posee un cierto tipo de
+datos</li>
+<li>Se usa en expresiones para realizar cálculos</li>
+<li>Deben ser declaradas antes de ser utilizadas.</li>
+<li>El operador <code>&amp;</code> permite acceder a la dirección de la variable</li>
+<li>Son sensibles a mayúsculas y minúsculas</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Variables: inicialización</h2>
+
+<p>Es posible realizar la incialización en la declaración</p>
+<pre><code class="c">int x = 9;
+int j, x = 12;
+int j = 12, x;
+char c = 'x';
+const int x = 12;
+char c, linea[80];
+char nombre[] = "Juan";
+const char mensaje[] = "Saludos!!";
+</code></pre>
+<p class="fragment">
+<em>Recordar que las últimas dos cadenas son arreglos de <strong>char</strong> terminadas en
+<strong>'\0'</strong></em>
+</p>
+<pre class="fragment">
+<code class="c">
+['J','u','a','n','\0']
+['S', 'a', 'l', 'u', 'd', 'o', 's', '!', '!', '\0']
+</code>
+</pre>
+
+
+</section>
+<section>
+
+<h2>Conversiones de tipos</h2>
+
+<ul>
+<li>Es posible <em>mezclar</em> tipos de datos en una expresión:
+
+<ul>
+<li>
+<strong>Conversiones explícitas:</strong> <code>(tipo) expresion</code>
+</li>
+<li>
+<strong>Conversiones implícitas:</strong> <code>lvalue = rvalue</code>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Conversiones implícitas</h2>
+
+<ul>
+<li>De <code>int</code> a <code>char</code> se eliminan los bits de orden superior</li>
+<li>De <code>float</code> a <code>int</code> se trunca la parte fraccionaria</li>
+<li>De <code>double</code> a <code>float</code> se aplica redondeo</li>
+<li>Los enteros de mayor magnitud (como <code>long</code>) se convierten en <code>short</code> o en <code>char</code>
+eliminando los bits de orden superior</li>
+</ul>
+
+<p><small>
+<a href="images/ejemplos/01/04-cast-conversion.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Conversiones implícitas: Reglas</h2>
+
+<ul>
+<li>Si cualquier operando es <code>long double</code>, se convierte el otro a <code>long double</code>
+</li>
+<li>De otra manera, si cualquier operando es <code>double</code>, se convierte el otro a <code>double</code>
+</li>
+<li>De otra manera, si cualquier operando es <code>float</code>, se convierte el otro a <code>float</code>
+</li>
+<li>De otra manera, si cualquier operando es <code>long</code>, se convierte el otro a <code>long</code>
+</li>
+<li>De otra manera, si cualquier operando es <code>int</code>, se convierte el otro a <code>int</code>
+</li>
+<li>Finalmente, se convierte <code>char</code> a <code>short</code>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Conversiones implícitas: Ejemplo</h2>
+
+<p>Asumiendo el siguiente código</p>
+<pre><code class="c">  int x = 64, y = 357;
+  float f = 4.95;
+  char c;
+  c = x;
+  x = c;
+  c = y;
+  y = c;
+  y = f;
+</code></pre>
+<p class="fragment">
+¿Con qué valores quedan <strong>x, y, f, c</strong>?
+</p>
+
+<p><small class="fragment">
+<a href="images/ejemplos/01/05-implicit-conversion.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Operadores</h1>
+
+</section>
+<section>
+
+<h2>Operadores</h2>
+
+<ul>
+<li>Son elementos del lenguaje que se aplican a variables o literales en una
+expresión:
+
+<ul>
+<li>
+<strong>Asignación:</strong> <code>=</code> retorna el valor asignado, de forma tal de permitir
+asignaciones encadenadas</li>
+<li>
+<strong>Operadores artiméticos:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>
+</li>
+<li>
+<strong>Operadores lógicos:</strong> <code>&amp;&amp;</code>, <code>||</code> <code>!</code>
+</li>
+<li>
+<strong>Operadores relacionales:</strong> <code>==</code>, <code>!=</code>,<code>&lt;</code>, <code>&gt;</code>,<code>..</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<p class="fragment highlight-red">
+Cualquier valor distinto de 0 (cero) es <strong>VERDADERO</strong>.  El 0 (cero) es <strong>FALSO</strong>
+</p>
+
+</section>
+<section>
+
+<h2>Operadores: errores</h2>
+
+<p>Es común usar de forma equivocada el símbolo <code>=</code> como comparación</p>
+<pre><code class="c">int x = 3;
+
+if ( x = 3 ) /* siempre será true */
+
+if ( x == 3 ) /* Uso correcto */
+</code></pre>
+</section>
+<section>
+
+<h2>Operadores: asignación</h2>
+
+<p>Se definen los operadores <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, etc</p>
+
+<p>Permiten realizar una asignación <em>comprimida</em></p>
+<pre><code class="c">x += 6;  /* equivale a x = x + 6  */
+</code></pre>
+</section>
+<section>
+
+<h2>Operadores: pre/post-incremento</h2>
+
+<p>Permiten incrementar/decrementar una variable en 1</p>
+
+<p>Puede ser en forma prefija o postfija:</p>
+<pre><code class="c">
+x++;
+
+++x;
+
+/*  Ambos equivalen a x = x + 1 */
+</code></pre>
+<p>¿Con qué valores quedan?</p>
+<pre><code class="c">int n = 5, x, y;
+
+x = ++n;
+
+y = n++;
+</code></pre>
+<p><small>
+<a href="images/ejemplos/01/06-pre-post-operator.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Más operadores</h2>
+
+<p>El operador condicional <strong>if then else: <code>_?_:_</code></strong></p>
+<pre><code class="c">e1 ? e2 : e3
+</code></pre>
+<p>El operador <code>sizeof</code> que devuelve el tamaño de un tipo o variable</p>
+<pre><code class="c">int x=2;
+
+sizeof(x);
+
+sizeof(int);
+</code></pre>
+<p><small>
+<a href="images/ejemplos/01/07-sizeof-types.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Operadores para manipular bits</h2>
+
+<ul>
+<li>
+<code>&amp;</code> (AND), <code>|</code> (OR), <code>^</code> (OR exclusivo), <code>&lt;&lt;</code>, <code>&gt;&gt;</code> (desplazamientos de bits a derecha o
+izquierda), <code>~</code>(complemento a 1)</li>
+<li>No se aplican a operandos del tipo float o double</li>
+<li>No se debe confundir con los operadores lógicos <code>&amp;&amp;</code> y con <code>||</code>
+</li>
+</ul>
+
+<p><small>
+<a href="images/ejemplos/01/08-masq.c">Descargar ejemplo</a>
+</small></p>
+
+</section>
+</section>
+<section>
 
 </section>
