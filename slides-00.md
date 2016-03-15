@@ -53,7 +53,7 @@
 * Miércoles 13:30 a 15:00 Sala de PC
 * Viernes de 11:30hs a 13:30hs Aula 1-1
 ***
-## Bilbiografía
+## Bibliografía
 
 * El Lenguaje C. Kernighan & Ritchie
 * C con ejemplos. Perry, Greg
