@@ -338,6 +338,10 @@ const char mensaje[] = "Saludos!!";
 * Los enteros de mayor magnitud (como `long`) se convierten en `short` o en `char`
 eliminando los bits de orden superior
 
+<small>
+[Descargar ejemplo](images/ejemplos/01/04-cast-conversion.c)
+</small>
+
 ---
 ## Conversiones implícitas: Reglas
 
@@ -347,4 +351,134 @@ eliminando los bits de orden superior
 * De otra manera, si cualquier operando es `long`, se convierte el otro a `long`
 * De otra manera, si cualquier operando es `int`, se convierte el otro a `int`
 * Finalmente, se convierte `char` a `short`
+
+---
+## Conversiones implícitas: Ejemplo
+
+Asumiendo el siguiente código
+
+```c
+  int x = 64, y = 357;
+  float f = 4.95;
+  char c;
+  c = x;
+  x = c;
+  c = y;
+  y = c;
+  y = f;
+```
+
+<p class="fragment">
+¿Con qué valores quedan <strong>x, y, f, c</strong>?
+</p>
+<small class="fragment">
+[Descargar ejemplo](images/ejemplos/01/05-implicit-conversion.c)
+</small>
+***
+***
+# Operadores
+---
+## Operadores
+
+* Son elementos del lenguaje que se aplican a variables o literales en una
+expresión:
+  * **Asignación:** `=` retorna el valor asignado, de forma tal de permitir
+    asignaciones encadenadas
+  * **Operadores artiméticos:** `+`, `-`, `*`, `/`, `%`
+  * **Operadores lógicos:** `&&`, `||` `!`
+  * **Operadores relacionales:** `==`, `!=`,`<`, `>`,`..`
+
+<p class="fragment highlight-red">
+Cualquier valor distinto de 0 (cero) es <strong>VERDADERO</strong>.  El 0 (cero) es <strong>FALSO</strong>
+</p>
+
+---
+## Operadores: errores
+
+Es común usar de forma equivocada el símbolo `=` como comparación
+
+```c
+int x = 3;
+
+if ( x = 3 ) /* siempre será true */
+
+if ( x == 3 ) /* Uso correcto */
+```
+
+---
+## Operadores: asignación
+
+Se definen los operadores `+=`, `-=`, `*=`, `/=`, etc
+
+Permiten realizar una asignación *comprimida*
+
+```c
+x += 6;  /* equivale a x = x + 6  */
+```
+
+---
+## Operadores: pre/post-incremento
+
+Permiten incrementar/decrementar una variable en 1
+
+Puede ser en forma prefija o postfija:
+
+```c
+
+x++;
+
+++x;
+
+/*  Ambos equivalen a x = x + 1 */
+```
+
+¿Con qué valores quedan?
+
+```c
+int n = 5, x, y;
+
+x = ++n;
+
+y = n++;
+```
+<small>
+[Descargar ejemplo](images/ejemplos/01/06-pre-post-operator.c)
+</small>
+
+---
+## Más operadores
+
+El operador condicional **if then else: `_?_:_`**
+
+```c
+e1 ? e2 : e3
+```
+
+El operador `sizeof` que devuelve el tamaño de un tipo o variable
+
+```c
+int x=2;
+
+sizeof(x);
+
+sizeof(int);
+```
+
+<small>
+[Descargar ejemplo](images/ejemplos/01/07-sizeof-types.c)
+</small>
+---
+## Operadores para manipular bits
+
+* `&` (AND), `|` (OR), `^` (OR exclusivo), `<<`, `>>` (desplazamientos de bits a derecha o
+izquierda), `~`(complemento a 1)
+* No se aplican a operandos del tipo float o double
+* No se debe confundir con los operadores lógicos `&&` y con `||`
+
+<small>
+[Descargar ejemplo](images/ejemplos/01/08-masq.c)
+</small>
+
+***
+---
 
