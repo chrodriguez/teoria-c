@@ -8,7 +8,6 @@
 * Tipos de datos
 * Variables
 * Operadores
-* Estructura de un programa
 
 ***
 # Historia de C
@@ -478,7 +477,30 @@ izquierda), `~`(complemento a 1)
 <small>
 [Descargar ejemplo](images/ejemplos/01/08-masq.c)
 </small>
+---
+## Operadores: precedencia
 
+* `() [] ->`
+* `! ~  ++ -- - (tipo) * & sizeof`
+* `* / %`
+* `+ -`
+* `<< >>`
+* `== !=`
+
+<small>
+continúa...
+</small>
+---
+## Operadores: precedencia
+
+* `&`
+* `^`
+* `|`
+* `&&`
+* `||`
+* `?`
+* `= += -= *= /=`
+* `,`
 ***
 ---
 
